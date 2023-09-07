@@ -20,3 +20,11 @@ Here is where the manifest.json is supposed to show
 
 ![alt text](client/src/images/screenshot3.PNG)
 This is supposed to show storage from the IndexedDB
+
+## Updates
+- 9/7: Based on graders feedback
+    - src-sw.js: changed cache strategy to `{ StaleWhileRevalidate }` and implemented cache with StaleWhileRevalidate
+    - webpack.config.js: added the "title" option for the HtmlWebpackPlugin
+        - Added publicPath and startUrl options in the "WebpackPwaManifest"
+        - Updated the plugin configurations for "babel"
+    

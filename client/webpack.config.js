@@ -22,23 +22,28 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
+        title: 'PWA Text Editor', //Adding title
         filename: 'index.html',
         chunks: ['main'],
       }),
       new WebpackPwaManifest({
-        name: 'Your App Name',
-        short_name: 'App',
+        name: 'Text Editor',
+        short_name: 'Text',
         description: 'Description of your app',
         background_color: '#ffffff',
         theme_color: '#000000',
         start_url: '/',
         display: 'standalone',
+        publicPath: './',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('icons', 'android'),
           },
         ],
+        fingerprints: false,
+        inject: false,
       }),
       new InjectManifest({
         swSrc: './src-sw.js', 
